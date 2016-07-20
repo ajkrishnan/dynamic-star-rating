@@ -1,0 +1,22 @@
+function findAverage() {
+    var n = 1;
+    var firstParameter = document.getElementsByName("performanceRating"),
+        performanceStar = 0;
+    for (var i = 0; i < firstParameter.length; i++) {
+        if (firstParameter[i].checked) {
+            performanceStar = parseFloat(firstParameter[i].value);
+        }
+    }
+    var secondParameter = document.getElementsByName("clarityRating"),
+        clarityStar = 0;
+    for (var i = 0; i < secondParameter.length; i++) {
+        if (secondParameter[i].checked) {
+            clarityStar = parseFloat(secondParameter[i].value);
+            n++;
+        }
+    }
+    var averageStar = (performanceStar + clarityStar) / n;
+    for (var i = 0; i < averageStar-0.5; i++) {
+        document.getElementById("star" + i).style.color = "#FF0";
+    }
+}
